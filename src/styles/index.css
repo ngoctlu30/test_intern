@@ -1,0 +1,82 @@
+.main {
+  width: 30vw;
+  min-height: 100vh;
+  background-color: #ddd;
+  margin: 0 auto;
+}
+.infor {
+  padding: 50px;
+}
+.totalCase {
+  font-size: 40px;
+  color: red;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
+  font-weight: bold;
+  text-align: center;
+}
+
+.deathsAndRecover {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.deaths {
+  font-size: 26px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.recovered {
+  font-size: 26px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.label {
+  font-size: 12px;
+  color: rgb(175, 150, 150);
+}
+
+.inputContainer {
+  width: 90%;
+  height: 50px;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  align-self: center;
+  margin: auto;
+  border-radius: 12px;
+}
+
+.image {
+  margin-right: 30px;
+}
+.input {
+  outline: none;
+  width: 70%;
+  border: none;
+}
+
+::placeholder {
+  color: #ccc;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.listNation {
+  width: 100%;
+  height: auto;
+}
