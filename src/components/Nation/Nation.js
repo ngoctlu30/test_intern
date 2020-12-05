@@ -5,7 +5,8 @@ import './style.css'
 
 const NationMemorized = React.memo( function Nation({country, index, onTop}) {
   console.log(country.updated)
-  return <div className={`nation ${onTop ? 'onTop' : ''}`}>
+  return <>
+    <div className={`nationItem ${onTop ? 'onTop' : ''}`}>
       <div className="inforNation">
         {onTop ? '' : <p className="index">{index}</p>}
       <img className="flagNation" width="60" height="40" src={country.countryInfo.flag} alt={'Flag '+country.country} />
@@ -18,5 +19,6 @@ const NationMemorized = React.memo( function Nation({country, index, onTop}) {
       {transform(country.cases)}
     </div>
   </div>
+  </>
 })
 export default NationMemorized

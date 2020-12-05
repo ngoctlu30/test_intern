@@ -9,8 +9,9 @@ import Search from '../assets/search.png'
 import "../styles/index.css"
 import { transform } from '../helpers/transformNumber';
 import { quickSort } from '../helpers/quickShort';
+import Spin from '../components/spin';
 
-export default function Main() {
+ const MainMemo =  function Main() {
   const [loading, setLoading] = useState(true);
   const [totalCase, setTotalCase] = useState(null);
   const [totalDeaths, setTotalDeath] = useState(null);
@@ -20,6 +21,7 @@ export default function Main() {
 
 
   const fetchData = () => {
+   
      axios.get('https://disease.sh/v3/covid-19/countries').then(res => {
       const temp = [...res.data];
       const result = quickSort(temp, 0, temp.length - 1).reverse();     
@@ -39,7 +41,6 @@ export default function Main() {
       
     }, 0).then(
       () => {
-        console.log('done loading', listNation)
         setLoading(false)
       }
     )
@@ -47,7 +48,11 @@ export default function Main() {
 
 
    useEffect(() => {
-    setInterval(() => {fetchData();console.log('featching')}, 180000)
+   
+    fetchData()
+    setInterval(() => {
+      fetchData()
+    }, 180000)
   }, [])
 
   
@@ -55,18 +60,16 @@ export default function Main() {
     setSearchText(e.target.value);   
   }
 
-  // const typeText = useMemo(() => onChangeSearchText(searchText), [searchText])
-  // console.log('typeText',typeText)
   const list = useMemo(() => {
     return <>
       {listNation.length > 0 && listNation.filter((el) => {
-          return el.country.toLowerCase().includes(searchText.toLowerCase())
+          return el.country.toLowerCase().includes(searchText.toLowerCase()) 
         }).slice(0, 9).map((el, index) => {
           return <Nation country={el} index={index+1} key={el.country}/>
         })}
     </>
   }, [listNation, searchText])
-  if(loading) return <div>loading</div>
+  if(loading) return <Spin />
   return <div className="main">
       <div className="infor">
         <div className="totalCase">
@@ -89,3 +92,5 @@ export default function Main() {
       </div>
   </div>
 }
+
+export default React.memo(MainMemo)

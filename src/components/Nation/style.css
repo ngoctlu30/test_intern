@@ -1,4 +1,4 @@
-.nation {
+.nationItem {
   display: flex;
   flex-direction: row;
   width: 90%;
@@ -8,11 +8,11 @@
 }
 
 .onTop {
-  padding: 20px;
+  padding: 20px 30px;
   border: 1px solid #ccc;
   background-color: #fff;
   display: flex;
-  width: 80% !important;
+  width: 90% !important;
   justify-content: space-around;
 }
 
