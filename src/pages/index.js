@@ -64,7 +64,7 @@ import Spin from '../components/spin';
     return <>
       {listNation.length > 0 && listNation.filter((el) => {
           return el.country.toLowerCase().includes(searchText.toLowerCase()) 
-        }).slice(0, 9).map((el, index) => {
+        }).slice(0, 10).map((el, index) => {
           return <Nation country={el} index={index+1} key={el.country}/>
         })}
     </>
