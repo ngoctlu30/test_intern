@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Demo project: [Click here](https://ngoctlu30.github.io/test_intern/)
+
 ## Available Scripts
 
 In the project directory, you can run:
